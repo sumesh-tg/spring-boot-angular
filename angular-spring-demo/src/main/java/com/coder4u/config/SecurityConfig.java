@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 @PropertySource("classpath:application.properties")
+@PropertySource("classpath:database.properties")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Value("${spring.security.enabled}")
