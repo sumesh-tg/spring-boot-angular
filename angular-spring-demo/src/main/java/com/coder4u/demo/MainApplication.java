@@ -22,6 +22,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class MainApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
+		/*To turn off automatic restart when any file resources changes in classpath*/
+		//System.setProperty("spring.devtools.restart.enabled", "false");
 		SpringApplication.run(MainApplication.class, args);
 	}
 
