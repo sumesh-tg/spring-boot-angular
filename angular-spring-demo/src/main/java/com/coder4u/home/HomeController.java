@@ -17,6 +17,7 @@ import com.coder4u.student.StudentDAO;
 import com.coder4u.student.StudentRepository;
 
 @RestController
+@RequestMapping("api")
 public class HomeController {
 	/*
 	 * @Autowired StudentDAO repository;
@@ -27,8 +28,14 @@ public class HomeController {
 
 	@RequestMapping(value = "test", method = RequestMethod.GET)
 	public Object testRest() {
-		Student student = new Student(Long.valueOf(0), "Sumesh", "RN1000001");
-		studentRepository.save(student);
+		Student student1 = new Student(Long.valueOf(0), "Sumesh", "RN1000001");
+		Student student2 = new Student(Long.valueOf(0), "Rajesh", "RN1000001");
+		Student student3 = new Student(Long.valueOf(0), "Manu", "RN1000001");
+		Student student4 = new Student(Long.valueOf(0), "Muthu", "RN1000001");
+		studentRepository.save(student1);
+		studentRepository.save(student2);
+		studentRepository.save(student3);
+		studentRepository.save(student4);
 		studentRepository.findAll();
 		Map<String, String> mapTest = new HashMap<>();
 		mapTest.put("1", "data1");
@@ -51,5 +58,9 @@ public class HomeController {
 		mapTest.put("4", "data4");
 		mapTest.put("5", "data5");
 		return mapTest;
+	}
+	@RequestMapping("/api/hi")
+	public String hi() {
+		return "Hello world! >>> Message from <a href='https://grokonez.com' target='_blank'>grokonez.com</a>";
 	}
 }
